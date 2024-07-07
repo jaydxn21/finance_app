@@ -1,11 +1,11 @@
-const dbConfig = require("../../config/db.config.js");
+const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: false,
-
+  logging: console.log,
   pool: {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,
@@ -18,12 +18,8 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.user = require("./user.model.js")(sequelize, Sequelize);
 
-db.tutorials =
-  require("/Users/nimoyburrowes/Documents/finance_app/app/models/tutorial.model.js")(
-    sequelize,
-    Sequelize
-  );
 db.connectDB = async () => {
   try {
     await sequelize.authenticate();
@@ -33,7 +29,5 @@ db.connectDB = async () => {
     process.exit(1); // Exit process with failure
   }
 };
-
-module.exports = db;
 
 module.exports = db;
