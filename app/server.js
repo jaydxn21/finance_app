@@ -11,6 +11,7 @@ var corsOptions = {
   origin: "http://localhost:3000",
 };
 
+const authMiddleware = require("./app/middleware/auth.middleware");
 const db = require("./models");
 
 const authRoutes = require("./routes/auth.routes");
@@ -29,6 +30,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Atomic Production - Whwere dreams ignite!" });
 });
 app.use("/api/auth", authRoutes);
+
+app.get("/api/protected", authMiddleware, (req, res) => {
+  res.json({ message: "This is a protected route!" });
+});
 
 // Test connection route
 app.get("/test-connection", async (req, res) => {

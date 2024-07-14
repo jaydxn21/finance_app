@@ -1,18 +1,46 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    // Basic client-side validation
+    if (!username || !email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    console.log("handleRegister called");
+    console.log("Username:", username);
+    console.log("Email:", email);
+    console.log("Password:", password);
+
     try {
-      await AuthService.register(username, email, password);
+      const response = await AuthService.register(username, email, password);
+      console.log("Registration response:", response);
       alert("Registration successful");
+      navigate("/add-expense");
     } catch (error) {
-      console.error(error);
+      console.error("Error during registration:", error);
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Data:", error.response.data);
+        console.error("Status:", error.response.status);
+        console.error("Headers:", error.response.headers);
+        alert(`Registration failed: ${error.response.data.message}`);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("Request:", error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error Message:", error.message);
+      }
     }
   };
 

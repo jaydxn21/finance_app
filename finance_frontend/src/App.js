@@ -5,21 +5,27 @@ import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import AddTransaction from "./components/Transactions/AddTransaction";
 import TransactionList from "./components/Transactions/TransactionList";
+import AddExpense from "./components/AddExpense";
+import ExpenseList from "./components/ExpenseList";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div>
+        <Navbar />
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/transactions" element={<TransactionList />} />
           <Route path="/add-transaction" element={<AddTransaction />} />
+          <Route path="/add-expense" element={<AddExpense />} />
+          <Route path="/expenses" element={<ExpenseList />} />
         </Routes>
       </div>
     </Router>
   );
-}
+};
 
 export default App;
