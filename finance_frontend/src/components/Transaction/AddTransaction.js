@@ -10,7 +10,15 @@ const AddTransaction = () => {
   const handleAddTransaction = async (e) => {
     e.preventDefault();
     try {
-      await TransactionService.create({ amount, type, date, description });
+      const user = JSON.parse(localStorage.getItem("user"));
+      const userId = user.id;
+      await TransactionService.create({
+        amount,
+        type,
+        date,
+        description,
+        userId,
+      });
       alert("Transaction added successfully");
     } catch (error) {
       console.error(error);

@@ -17,6 +17,12 @@ const Navbar = () => {
         <li>
           <Link to="/expenses">Expense List</Link>
         </li>
+        <li>
+          <Link to="/add-transaction">Add Transaction</Link>
+        </li>
+        <li>
+          <Link to="/transactions">Transaction List</Link>
+        </li>
       </ul>
     </nav>
   );

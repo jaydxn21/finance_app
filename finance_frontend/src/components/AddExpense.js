@@ -13,7 +13,7 @@ const AddExpense = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/expenses",
+        "http://localhost:8080/api/expense",
         { amount, description, date },
         { headers: { "x-access-token": token } }
       );

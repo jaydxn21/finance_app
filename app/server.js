@@ -11,10 +11,12 @@ var corsOptions = {
   origin: "http://localhost:3000",
 };
 
-const authMiddleware = require("./app/middleware/auth.middleware");
+const authMiddleware = require("./middleware/auth.middleware");
 const db = require("./models");
 
 const authRoutes = require("./routes/auth.routes");
+const expenseRoutes = require("./routes/expense.routes");
+const transactionRoutes = require("./routes/transaction.routes");
 // db.sequelize.sync();
 
 app.use(cors(corsOptions));
@@ -30,6 +32,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Atomic Production - Whwere dreams ignite!" });
 });
 app.use("/api/auth", authRoutes);
+app.use("/api/expense", expenseRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 app.get("/api/protected", authMiddleware, (req, res) => {
   res.json({ message: "This is a protected route!" });
@@ -57,7 +61,7 @@ db.sequelize
     console.log("PostgreSQL connected successfully.");
     // Sync database
     // db.sequelize.sync();
-    db.sequelize.sync({ force: true }).then(() => {
+    db.sequelize.sync().then(() => {
       console.log("Drop and re-sync db.");
     });
     // Set port, listen for requests

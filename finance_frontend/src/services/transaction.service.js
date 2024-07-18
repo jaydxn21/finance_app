@@ -1,19 +1,21 @@
 import axios from "axios";
 import AuthService from "./auth.service";
 
-const API_URL = "http://localhost:8080/api/transactions/";
+const API_URL = "http://localhost:8080/api/transaction/";
 
 const create = async (transaction) => {
-  const user = AuthService.getCurrentUser();
+  const token = localStorage.getItem("token");
+
   return axios.post(API_URL, transaction, {
-    headers: { Authorization: `Bearer ${user.token}` },
+    headers: { "x-access-token": token },
   });
 };
 
 const getAll = async () => {
   const user = AuthService.getCurrentUser();
+  const token = localStorage.getItem("token");
   return axios.get(`${API_URL}user/${user.id}`, {
-    headers: { Authorization: `Bearer ${user.token}` },
+    headers: { "x-access-token": token },
   });
 };
 

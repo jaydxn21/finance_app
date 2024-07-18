@@ -15,19 +15,29 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.STRING,
     },
+    userId: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: "users", // Name of the table
+        key: "id", // Key in Users table that the userId column will refer to
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
+    },
   });
 
   Transaction.associate = function (models) {
+    models.user.hasMany(Transaction, { foreignKey: "userId" });
     Transaction.belongsTo(models.user, {
       foreignKey: {
+        name: "userId",
         allowNull: false,
       },
-    });
-    Transaction.belongsTo(models.category, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
+    }),
+      {
+        tableName: "transactions",
+      };
   };
 
   return Transaction;

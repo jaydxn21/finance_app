@@ -9,7 +9,7 @@ const ExpenseList = () => {
       const token = localStorage.getItem("token");
 
       try {
-        const response = await axios.get("http://localhost:8080/api/expenses", {
+        const response = await axios.get("http://localhost:8080/api/expense", {
           headers: { "x-access-token": token },
         });
 
