@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import "./styles/register.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -44,39 +45,81 @@ const Register = () => {
     }
   };
 
+  // return (
+  //   <div>
+  //     <h2>Register</h2>
+  //     <form onSubmit={handleRegister}>
+  //       <div>
+  //         <label>Username:</label>
+  //         <input
+  //           type="text"
+  //           value={username}
+  //           onChange={(e) => setUsername(e.target.value)}
+  //           required
+  //         />
+  //       </div>
+  //       <div>
+  //         <label>Email:</label>
+  //         <input
+  //           type="email"
+  //           value={email}
+  //           onChange={(e) => setEmail(e.target.value)}
+  //           required
+  //         />
+  //       </div>
+  //       <div>
+  //         <label>Password:</label>
+  //         <input
+  //           type="password"
+  //           value={password}
+  //           onChange={(e) => setPassword(e.target.value)}
+  //           required
+  //         />
+  //       </div>
+  //       <button type="submit">Register</button>
+  //     </form>
+  //   </div>
+  // );
+
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleRegister}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    <div className="container">
+      <div className="left-panel">
+        <div className="logo">FNCE.</div>
+        <div className="register-form">
+          <h2>Sign Up</h2>
+          <a href="/src/components/Auth/Login.js" className="log-in">
+            Log In
+          </a>
+          <form onSubmit={handleRegister}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Register</button>
+          </form>
         </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
+      </div>
+      <div className="right-panel">
+        <img src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Finance" />
+        <p>Get All Your Finances At One Place.</p>
+      </div>
     </div>
   );
 };

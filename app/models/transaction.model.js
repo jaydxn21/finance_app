@@ -1,12 +1,19 @@
 module.exports = (sequelize, Sequelize) => {
-  const Transaction = sequelize.define("transaction", {
+  const Transaction = sequelize.define("transactions", {
     amount: {
       type: Sequelize.FLOAT,
       allowNull: false,
     },
-    type: {
-      type: Sequelize.STRING,
+    typeId: {
+      type: Sequelize.INTEGER,
       allowNull: false,
+
+      references: {
+        model: "transactionTypes", // Name of the table
+        key: "transactionTypeId", // Key in Users table that the userId column will refer to
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
     },
     date: {
       type: Sequelize.DATE,
@@ -32,6 +39,13 @@ module.exports = (sequelize, Sequelize) => {
     Transaction.belongsTo(models.user, {
       foreignKey: {
         name: "userId",
+        allowNull: false,
+      },
+    }),
+      models.transactionType.hasMany(Transaction, { foreignKey: "typeId" });
+    Transaction.belongsTo(models.transactionType, {
+      foreignKey: {
+        name: "typeId",
         allowNull: false,
       },
     }),

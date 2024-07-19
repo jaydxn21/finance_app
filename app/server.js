@@ -15,7 +15,6 @@ const authMiddleware = require("./middleware/auth.middleware");
 const db = require("./models");
 
 const authRoutes = require("./routes/auth.routes");
-const expenseRoutes = require("./routes/expense.routes");
 const transactionRoutes = require("./routes/transaction.routes");
 // db.sequelize.sync();
 
@@ -32,7 +31,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Atomic Production - Whwere dreams ignite!" });
 });
 app.use("/api/auth", authRoutes);
-app.use("/api/expense", expenseRoutes);
 app.use("/api/transaction", transactionRoutes);
 
 app.get("/api/protected", authMiddleware, (req, res) => {

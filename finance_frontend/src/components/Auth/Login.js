@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import "./styles/login.css";
 // import axios from "axios";
 
 const Login = () => {
@@ -40,31 +41,72 @@ const Login = () => {
   // };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    //     <div>
+    //       <h2>Login</h2>
+    //       <form onSubmit={handleLogin}>
+    //         <div>
+    //           <label>Email:</label>
+    //           <input
+    //             type="email"
+    //             value={email}
+    //             onChange={(e) => setEmail(e.target.value)}
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label>Password:</label>
+    //           <input
+    //             type="password"
+    //             value={password}
+    //             onChange={(e) => setPassword(e.target.value)}
+    //             required
+    //           />
+    //         </div>
+    //         <button className="loginBtn" type="submit">
+    //           Login
+    //         </button>
+    //       </form>
+    //     </div>
+    //   );
+    // };
+
+    <div className="container">
+      <div className="left-panel">
+        <div className="logo">FNCE.</div>
+        <div className="login-form">
+          <h2>Log In</h2>
+          <a href="./Register.js" className="register">
+            Sign Up
+          </a>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="example@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            {/* <a href="#" className="forgot-password">
+              Forgot Password?
+            </a> */}
+            <button type="submit">Log In</button>
+          </form>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button className="loginBtn" type="submit">
-          Login
-        </button>
-      </form>
+      </div>
+      <div className="right-panel">
+        <img
+          src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg"
+          alt="Illustration"
+        />
+        <p>Get All Your Finances At One Place.</p>
+      </div>
     </div>
   );
 };

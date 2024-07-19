@@ -18,8 +18,16 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.transactionCode = require("./transactionCode.model.js")(
+  sequelize,
+  Sequelize
+);
 db.user = require("./user.model.js")(sequelize, Sequelize);
-db.expenses = require("./expense.model.js")(sequelize, Sequelize);
+
+db.transactionType = require("./transactionType.model.js")(
+  sequelize,
+  Sequelize
+);
 db.transactions = require("./transaction.model.js")(sequelize, Sequelize);
 
 db.connectDB = async () => {
