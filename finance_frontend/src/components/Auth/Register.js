@@ -87,7 +87,7 @@ const Register = () => {
         <div className="logo">FNCE.</div>
         <div className="register-form">
           <h2>Sign Up</h2>
-          <a href="/src/components/Auth/Login.js" className="log-in">
+          <a href="/login" className="log-in">
             Log In
           </a>
           <form onSubmit={handleRegister}>
