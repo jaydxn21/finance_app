@@ -37,7 +37,7 @@ app.use("/api/transaction", transactionRoutes);
 app.use("/api/transactionCode", transactionCodeRoutes);
 
 app.get("/api/protected", authMiddleware, (req, res) => {
-  res.json({ message: "This is a protected route!" });
+  res.json({ message: "This is a protected route!!" });
 });
 
 // Test connection route
