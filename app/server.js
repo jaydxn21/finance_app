@@ -16,7 +16,7 @@ const db = require("./models");
 
 const authRoutes = require("./routes/auth.routes");
 const transactionRoutes = require("./routes/transaction.routes");
-const transactionCodeRoutes = require("./routes/transactionCode.routes");
+const transactionTypeRoutes = require("./routes/transactionType.routes");
 
 // db.sequelize.sync();
 
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/transaction", transactionRoutes);
-app.use("/api/transactionCode", transactionCodeRoutes);
+app.use("/api/transactionType", transactionTypeRoutes);
 
 app.get("/api/protected", authMiddleware, (req, res) => {
   res.json({ message: "This is a protected route!!" });

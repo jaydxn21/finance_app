@@ -4,15 +4,14 @@ const Transaction = db.transactions;
 // Create and Save a new Transaction
 exports.create = async (req, res) => {
   try {
-    const { amount, type, date, description, userId, categoryId } = req.body;
+    const { amount, typeId, date, description, userId } = req.body;
 
     const transaction = await Transaction.create({
       amount,
-      type,
+      typeId,
       date,
       description,
       userId,
-      categoryId,
     });
 
     res.status(201).json(transaction);
