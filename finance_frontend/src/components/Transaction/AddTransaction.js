@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TransactionService from "../../services/transaction.service";
 import TransactionTypeService from "../../services/transactionType.service";
-import { response } from "express";
+// import TransactionTypeService from "../../services/transactionType.service";
 
 const AddTransaction = () => {
   const [amount, setAmount] = useState("");
@@ -12,8 +12,9 @@ const AddTransaction = () => {
 
   useEffect(() => {
     TransactionTypeService.getAll()
-      .then((response) => response.json())
-      .then((data) => setTransactionTypes(data))
+      .then((response) => {
+        setTransactionTypes(response.data);
+      })
       .catch((error) =>
         console.error("Error fetching transaction types:", error)
       );
