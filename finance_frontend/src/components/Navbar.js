@@ -12,12 +12,6 @@ const Navbar = () => {
           <Link to="/register">Register</Link>
         </li>
         <li>
-          <Link to="/add-expense">Add Expense</Link>
-        </li>
-        <li>
-          <Link to="/expenses">Expense List</Link>
-        </li>
-        <li>
           <Link to="/add-transaction">Add Transaction</Link>
         </li>
         <li>

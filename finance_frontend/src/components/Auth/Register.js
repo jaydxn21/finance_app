@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import { Link } from "react-router-dom";
 import "./styles/register.css";
 
 const Register = () => {
@@ -87,9 +88,12 @@ const Register = () => {
         <div className="logo">FNCE.</div>
         <div className="register-form">
           <h2>Sign Up</h2>
-          <a href="/login" className="log-in">
-            Log In
-          </a>
+          <p>
+            Already have an account?{" "}
+            <Link to="/login" className="log-in">
+              Log in here
+            </Link>
+          </p>
           <form onSubmit={handleRegister}>
             <input
               type="text"

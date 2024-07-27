@@ -4,6 +4,7 @@ import AuthService from "./auth.service";
 const API_URL = "http://localhost:8080/api/transaction/";
 
 const create = async (transaction) => {
+  console.log(transaction);
   const token = localStorage.getItem("token");
 
   return axios.post(API_URL, transaction, {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import { Link } from "react-router-dom";
 import "./styles/login.css";
 // import axios from "axios";
 
@@ -8,8 +9,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
-  // navigate("/home");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -95,6 +94,9 @@ const Login = () => {
             </a>
             <button type="submit">Login</button>
           </form>
+          <p>
+            Don't have an account? <Link to="/register">Register here</Link>
+          </p>
         </div>
       </div>
       <div className="right-panel">
@@ -102,7 +104,7 @@ const Login = () => {
           src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg"
           alt="Illustration"
         />
-        ;<p>Get All Your Finances At One Place.</p>
+        <p>Get All Your Finances At One Place.</p>
       </div>
     </div>
   );

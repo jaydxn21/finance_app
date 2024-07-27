@@ -25,9 +25,10 @@ const AddTransaction = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const userId = user.id;
+      console.log(type);
       await TransactionService.create({
         amount,
-        type,
+        typeId: type,
         date,
         description,
         userId,
