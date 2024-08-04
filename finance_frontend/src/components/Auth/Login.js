@@ -68,43 +68,44 @@ const Login = () => {
     //     </div>
     //   );
     // };
-
-    <div className="container">
-      <div className="left-panel">
-        <div className="logo">FNCE.</div>
-        <div className="login-form">
-          <h2>Login</h2>
-          <form onSubmit={handleLogin}>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <a href="#" className="forgot-password">
-              Forgot your password?
-            </a>
-            <button type="submit">Login</button>
-          </form>
-          <p>
-            Don't have an account? <Link to="/register">Register here</Link>
-          </p>
+    <div className="login-body">
+      <div className="container">
+        <div className="left-panel">
+          <div className="logo">FNCE.</div>
+          <div className="login-form">
+            <h2>Login</h2>
+            <form onSubmit={handleLogin}>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <a href="#" className="forgot-password">
+                Forgot your password?
+              </a>
+              <button type="submit">Login</button>
+            </form>
+            <p>
+              Don't have an account? <Link to="/register">Register here</Link>
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="right-panel">
-        <img
-          src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg"
-          alt="Illustration"
-        />
-        <p>Get All Your Finances At One Place.</p>
+        <div className="right-panel">
+          <img
+            src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg"
+            alt="Illustration"
+          />
+          <p>Get All Your Finances At One Place.</p>
+        </div>
       </div>
     </div>
   );

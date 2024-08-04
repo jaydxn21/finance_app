@@ -83,46 +83,48 @@ const Register = () => {
   // );
 
   return (
-    <div className="container">
-      <div className="left-panel">
-        <div className="logo">FNCE.</div>
-        <div className="register-form">
-          <h2>Sign Up</h2>
-          <p>
-            Already have an account?{" "}
-            <Link to="/login" className="log-in">
-              Log in here
-            </Link>
-          </p>
-          <form onSubmit={handleRegister}>
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button type="submit">Register</button>
-          </form>
+    <div className="register-body">
+      <div className="container">
+        <div className="left-panel">
+          <div className="logo">FNCE.</div>
+          <div className="register-form">
+            <h2>Sign Up</h2>
+            <p>
+              Already have an account?{" "}
+              <Link to="/login" className="log-in">
+                Log in here
+              </Link>
+            </p>
+            <form onSubmit={handleRegister}>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button type="submit">Register</button>
+            </form>
+          </div>
         </div>
-      </div>
-      <div className="right-panel">
-        <img src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Finance" />
-        <p>Get All Your Finances At One Place.</p>
+        <div className="right-panel">
+          <img src="/img/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Finance" />
+          <p>Get All Your Finances At One Place.</p>
+        </div>
       </div>
     </div>
   );
