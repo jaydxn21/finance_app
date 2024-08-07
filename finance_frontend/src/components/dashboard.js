@@ -4,12 +4,16 @@ import axios from "axios";
 import "/Users/nimoyburrowes/Documents/finance_app/finance_frontend/src/dashboard.css";
 import TransactionService from "../services/transaction.service";
 import AuthService from "../services/auth.service";
+import Analytics from "./Analytics";
 
 const DashboardComponent = () => {
   const [userData, setUserData] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [chartLoading, setChartLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [chartError, setChartError] = useState(null);
+  const [analyticsData, setAnalyticsData] = useState(null);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -60,8 +64,21 @@ const DashboardComponent = () => {
         setLoading(false);
       }
     };
+    const fetchAnalyticsData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/analytics");
+        console.log(response.data);
+        setAnalyticsData(response.data);
+      } catch (err) {
+        setChartError("Error fetching analytics data");
+        console.error("Error fetching data:", err);
+      } finally {
+        setChartLoading(false);
+      }
+    };
 
     fetchTransactions();
+    fetchAnalyticsData();
   }, []);
 
   if (loading) {
@@ -107,6 +124,11 @@ const DashboardComponent = () => {
         </div>
         <div className="analytics">
           <h2>Analytics</h2>
+          <Analytics
+            analyticsData={analyticsData}
+            chartLoading={chartLoading}
+            chartError={chartError}
+          />
           {/* Add your analytics components here */}
         </div>
         <div className="recent-transactions">

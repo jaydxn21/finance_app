@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import DashboardComponent from "./components/dashboard";
 // import "./App.css";
 import "../src/components/style/navbar.css";
+import Analytics from "./components/Analytics";
 
 const App = () => {
   return (
