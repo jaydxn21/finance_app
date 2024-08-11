@@ -22,25 +22,24 @@ const Analytics = (props) => {
   return (
     <div className="analytics-container">
       <div className="analytics-summary">
-        <p>Total Spent: ${props.analyticsData.totalSpent.toLocaleString()}</p>
         <p>Total Income: ${props.analyticsData.totalIncome.toLocaleString()}</p>
         <p>
           Total Expenses: ${props.analyticsData.totalExpenses.toLocaleString()}
         </p>
       </div>
       <div className="chart-container">
-        <PieChart width={400} height={400}>
+        <PieChart width={500} height={400}>
           <Pie
-            data={props.analyticsData.categories}
+            data={props.analyticsData.types}
             dataKey="amount"
-            nameKey="category"
+            nameKey="type"
             cx="50%"
             cy="50%"
             outerRadius={150}
             fill="#8884d8"
             label
           >
-            {props.analyticsData.categories.map((entry, index) => (
+            {props.analyticsData.types.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

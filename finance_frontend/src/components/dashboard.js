@@ -66,8 +66,14 @@ const DashboardComponent = () => {
     };
     const fetchAnalyticsData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/analytics");
-        console.log(response.data);
+        const token = localStorage.getItem("token");
+        const response = await axios.get(
+          "http://localhost:8080/api/analytics",
+          {
+            headers: { "x-access-token": token },
+          }
+        );
+        console.log("Trans", response.data);
         setAnalyticsData(response.data);
       } catch (err) {
         setChartError("Error fetching analytics data");
@@ -96,9 +102,26 @@ const DashboardComponent = () => {
           <h1>Welcome, {userData.username}</h1>
           {/* <p>Balance: ${userData.balance.toLocaleString()}</p> */}
         </div>
+
         <Link to="/add-transaction" className="add-transaction-button">
           Add Transaction
         </Link>
+        {transactions.map((transaction) => (
+          <div key={transaction.id} className="transaction-actions">
+            <Link
+              to={`/update-transaction/${transaction.id}`}
+              className="update-transaction-button"
+            >
+              Update Transaction
+            </Link>
+            <Link
+              to={`/delete-transaction/${transaction.id}`}
+              className="delete-transaction-button"
+            >
+              Delete Transaction
+            </Link>
+          </div>
+        ))}
       </div>
       <div className="main-content">
         <div className="balance">

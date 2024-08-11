@@ -30,6 +30,12 @@ db.transactionType = require("./transactionType.model.js")(
 );
 db.transactions = require("./transaction.model.js")(sequelize, Sequelize);
 
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
 db.connectDB = async () => {
   try {
     await sequelize.authenticate();

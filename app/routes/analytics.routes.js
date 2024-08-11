@@ -1,15 +1,10 @@
-// app.get("/api/analytics", (req, res) => {
-//   const analyticsData = {
-//     totalSpent: 76550.9,
-//     totalIncome: 5250.44,
-//     totalExpenses: 3120.75,
-//     categories: [
-//       { category: "Groceries", amount: 2500 },
-//       { category: "Bills", amount: 1500 },
-//       { category: "Transportation", amount: 500 },
-//       { category: "Income", amount: 1000 },
-//       { category: "Deposit", amount: 750 },
-//     ],
-//   };
-//   res.json(analyticsData);
-// });
+const analyticsController = require("../controllers/analytics.controller");
+const authMiddleware = require("../middleware/auth.middleware");
+// const express = require("express");
+// const router = express.Router();
+// var router = require("express").Router();
+var router = require("express").Router();
+
+router.get("/", authMiddleware, analyticsController.getAnalyticsData);
+
+module.exports = router;
