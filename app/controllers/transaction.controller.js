@@ -1,5 +1,7 @@
 const db = require("../models");
 const Transaction = db.transactions;
+const TransactionType = db.transactionType;
+const TransactionCode = db.transactionCode;
 
 // Create and Save a new Transaction
 exports.create = async (req, res) => {
@@ -25,6 +27,20 @@ exports.findAll = async (req, res) => {
   try {
     const transactions = await Transaction.findAll({
       where: { userId: req.params.userId },
+      order: [["id", "ASC"]],
+
+      include: [
+        {
+          model: TransactionType,
+          as: "transactionType",
+          include: [
+            {
+              model: TransactionCode,
+              as: "transactionCode",
+            },
+          ],
+        },
+      ],
     });
 
     res.status(200).json(transactions);

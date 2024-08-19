@@ -9,6 +9,7 @@ const TransactionCode = db.transactionCode;
 exports.getAnalyticsData = async (req, res) => {
   try {
     const transactions = await Transaction.findAll({
+      //add where statement to analytics to specify which info to pull
       include: [
         {
           model: TransactionType,

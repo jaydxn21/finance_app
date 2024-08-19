@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import TransactionService from "../../services/transaction.service";
 import TransactionTypeService from "../../services/transactionType.service";
 import { useParams } from "react-router-dom";
-import "../style/transaction/add.css";
+import "../style/transaction/update.css";
 import { useNavigate } from "react-router-dom";
-
 // import TransactionTypeService from "../../services/transactionType.service";
 
-const AddTransaction = () => {
+const UpdateTransaction = () => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
   const [date, setDate] = useState("");
@@ -44,20 +43,20 @@ const AddTransaction = () => {
     }
   }, [id, transactionTypes]);
 
-  const handleAddTransaction = async (e) => {
+  const handleUpdateTransaction = async (e) => {
     e.preventDefault();
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const userId = user.id;
       console.log(type);
-      await TransactionService.create({
+      await TransactionService.updateTransaction(id, {
         amount,
         typeId: type,
         date,
         description,
         userId,
       });
-      alert("Transaction added successfully");
+      alert("Transaction updated successfully");
       navigate("/transactions");
     } catch (error) {
       console.error(error);
@@ -66,8 +65,8 @@ const AddTransaction = () => {
 
   return (
     <div>
-      <h2>Add Transaction</h2>
-      <form onSubmit={handleAddTransaction}>
+      <h2>Update Transaction</h2>
+      <form onSubmit={handleUpdateTransaction}>
         <div>
           <label>Amount:</label>
           <input
@@ -121,4 +120,4 @@ const AddTransaction = () => {
   );
 };
 
-export default AddTransaction;
+export default UpdateTransaction;

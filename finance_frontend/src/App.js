@@ -5,13 +5,11 @@ import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import AddTransaction from "./components/Transaction/AddTransaction";
 import TransactionList from "./components/Transaction/TransactionList";
-import AddExpense from "./components/AddExpense";
-import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar";
 import DashboardComponent from "./components/dashboard";
 // import "./App.css";
 import "../src/components/style/navbar.css";
-import Analytics from "./components/Analytics";
+import UpdateTransaction from "./components/Transaction/UpdateTransaction";
 
 const App = () => {
   return (
@@ -24,9 +22,12 @@ const App = () => {
           <Route path="/" element={<DashboardComponent />} />
           <Route path="/transactions" element={<TransactionList />} />
           <Route path="/add-transaction" element={<AddTransaction />} />
+          <Route
+            path="/update-transaction/:id"
+            element={<UpdateTransaction />}
+          />
+
           <Route path="/dashboard" element={<DashboardComponent />} />
-          <Route path="/add-expense" element={<AddExpense />} />
-          <Route path="/expenses" element={<ExpenseList />} />
         </Routes>
       </div>
     </Router>
