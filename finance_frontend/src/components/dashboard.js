@@ -77,7 +77,7 @@ const DashboardComponent = () => {
       {/* <SidebarComponent userData={userData} /> */}
 
       <div className="main-content row justify-content-around">
-        <div className="transactions card col-6">
+        <div className="transactions card col-5">
           <h2>Recent Transactions</h2>
           <ul>
             {transactions

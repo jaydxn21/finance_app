@@ -11,6 +11,7 @@ import "../src/components/style/navbar.css";
 import UpdateTransaction from "./components/Transaction/UpdateTransaction";
 import Test from "./Test";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const App = () => {
   return (
