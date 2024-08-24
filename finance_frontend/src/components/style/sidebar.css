@@ -1,21 +1,21 @@
 /* Sidebar container */
 .sidebar-container {
   position: relative;
-  padding-top: 10%;
+  padding-top: 25px;
   background-color: #f0f3fa; /* Light blue background for the whole container */
 }
 
 /* Hamburger menu */
 .hamburger-menu {
-  font-size: 28px;
+  font-size: 20px; /* Slightly smaller font size */
   cursor: pointer;
-  padding: 8px;
-  background-color: #007bff; /* Bright blue color */
+  padding: 5px 10px; /* Adjusted padding */
+  background-color: #007bff;
   color: white;
-  border-radius: 8px; /* Rounded corners for a modern look */
+  border-radius: 4px;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 10px; /* Reduced top margin */
+  left: 10px; /* Reduced left margin */
   z-index: 1000;
 }
 
@@ -24,14 +24,18 @@
   position: fixed;
   left: -300px;
   top: 0;
-  width: 250px;
+  /* width: 250px; */
   height: 100%;
   background-color: #ffffff; /* White background for the sidebar */
   border-right: 2px solid #ddd; /* Subtle border */
   transition: left 0.3s ease;
   z-index: 999;
-  padding: 20px;
-  padding-top: 60px;
+  /* padding: 20px; */
+  padding-top: 45px;
+}
+.sidebar {
+  padding-top: 110px; /* Adjusted padding inside the sidebar */
+  width: 240px; /* Adjusted width to make the sidebar slightly narrower */
 }
 
 /* When the sidebar is open */

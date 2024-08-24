@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div className="login-body">
-      <div className="container">
+      <div className="authcontainer">
         <div className="left-panel">
           <div className="logo">FNCE.</div>
           <div className="login-form">
@@ -48,7 +48,10 @@ const Login = () => {
               <button type="submit">Login</button>
             </form>
             <p>
-              Don't have an account? <Link to="/register">Register here</Link>
+              Don't have an account?{" "}
+              <Link className="registerLink" to="/register">
+                Register
+              </Link>
             </p>
           </div>
         </div>

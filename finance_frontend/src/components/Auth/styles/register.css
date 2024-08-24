@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-.container {
+.authcontainer {
   display: flex;
   background-color: #fff; /* White background for the container */
   width: 1000px;
@@ -105,5 +105,8 @@
 
 .right-panel p {
   font-size: 18px;
-  color: #007bff; /* Blue text color */
+  color: #0056b3; /* Blue text color */
+}
+.login-form p {
+  color: white;
 }

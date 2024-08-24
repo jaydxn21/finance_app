@@ -7,9 +7,10 @@ import AddTransaction from "./components/Transaction/AddTransaction";
 import TransactionList from "./components/Transaction/TransactionList";
 import Navbar from "./components/Navbar";
 import DashboardComponent from "./components/dashboard";
-// import "./App.css";
 import "../src/components/style/navbar.css";
 import UpdateTransaction from "./components/Transaction/UpdateTransaction";
+import Test from "./Test";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<DashboardComponent />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/transactions" element={<TransactionList />} />
           <Route path="/add-transaction" element={<AddTransaction />} />
           <Route

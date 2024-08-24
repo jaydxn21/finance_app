@@ -1,4 +1,4 @@
-/* src/App.css */
+/* Updated CSS */
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -7,56 +7,27 @@ body {
 
 .dashboard-container {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 1fr; /* Single column layout by default */
   gap: 20px;
   padding: 20px;
+  transition: grid-template-columns 0.3s ease; /* Smooth transition */
 }
 
-.sidebar {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 10px;
-  height: 85vh;
-  margin-top: 8.5%;
+.main-content {
+  /* margin-left: auto;
+  margin-right: auto;
+  max-width: 800px; Center the content when the sidebar is closed */
+  transition: margin-left 0.3s ease; /* Smooth transition */
 }
 
-.header,
 .transactions,
-.balance,
-.analytics,
-.recent-transactions {
+.analytics {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
+  width: fit-content;
   margin-bottom: 20px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.header p {
-  margin: 5px 0 0;
-  color: #888;
-}
-
-.balance {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.balance-statistic {
-  width: 50%;
-  height: 200px;
-  background-color: #eceff4;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for modern look */
 }
 
 .transactions ul {
@@ -78,43 +49,25 @@ body {
   font-size: 14px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.profile-container {
-  display: flex;
-  align-items: center;
-}
-
-.profile-picture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
 .see-more-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  margin-top: 20px; /* Adjust as needed */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .see-more-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Blue background */
-  color: white; /* White text */
-  text-decoration: none; /* Remove underline */
-  border-radius: 4px; /* Rounded corners */
-  text-align: center; /* Center the text */
-  font-size: 14px; /* Adjust font size */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .see-more-link:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }

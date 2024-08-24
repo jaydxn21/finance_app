@@ -73,22 +73,11 @@ const DashboardComponent = () => {
   }
 
   return (
-    <div className="dashboard-container">
-      {/* <div className="sidebar">
-        <div className="header">
-          <div className="profile-container">
-            <img
-              src={require("../img/defaultprofilepic.jpg")}
-              alt="Profile"
-              className="profile-picture"
-            />
-            <h1>Welcome, {userData.username}</h1>
-          </div>
-        </div>
-      </div> */}
-      <SidebarComponent userData={userData} />
-      <div className="main-content">
-        <div className="transactions">
+    <div className="dashboard-container container">
+      {/* <SidebarComponent userData={userData} /> */}
+
+      <div className="main-content row justify-content-around">
+        <div className="transactions card col-6">
           <h2>Recent Transactions</h2>
           <ul>
             {transactions
@@ -108,7 +97,7 @@ const DashboardComponent = () => {
             </Link>
           </div>
         </div>
-        <div className="analytics">
+        <div className="analytics card col-6">
           <h2>Analytics</h2>
           <Analytics
             analyticsData={analyticsData}
