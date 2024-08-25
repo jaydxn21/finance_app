@@ -1,32 +1,22 @@
-nav {
-  background-color: #333333;
-  padding: 10px;
+.navbar-custom .profile-container {
+  display: flex;
+  align-items: center;
 }
 
-/* Style for the list inside the navbar */
-nav ul {
-  list-style: none; /* Remove bullet points */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center;
+.navbar-custom .profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-/* Style for each list item */
-nav ul li {
-  margin: 0 15px; /* Space between items */
+.navbar-custom .username {
+  margin-right: 5px;
+  color: #fff; /* Ensures the username text is white */
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* Style for the links inside the navbar */
-nav a {
-  color: #fff; /* Text color */
-  text-decoration: none; /* Remove underline from links */
-  padding: 10px 15px; /* Padding around links */
-  display: block; /* Make links block-level for padding to work */
-}
-
-/* Hover effect for links */
-nav a:hover {
-  background-color: #555; /* Change background color on hover */
-  border-radius: 5px; /* Optional: Add rounded corners */
+.navbar-custom .dropdown-toggle::after {
+  display: none; /* Hides the dropdown arrow */
 }

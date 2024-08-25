@@ -5,7 +5,6 @@ import "./style/dashboard.css";
 import TransactionService from "../services/transaction.service";
 import AuthService from "../services/auth.service";
 import Analytics from "./Analytics";
-import SidebarComponent from "./sidebar";
 
 const DashboardComponent = () => {
   const [userData, setUserData] = useState(null);
