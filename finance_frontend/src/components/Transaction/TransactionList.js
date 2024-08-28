@@ -53,48 +53,48 @@ const TransactionList = () => {
 
   return (
     <div className="transaction-list-container">
-      <div className="sidebar">
+      <div className="main-content">
+        <h2>Transaction List</h2>
         <Link to="/add-transaction" className="add-transaction-button">
           Add Transaction
         </Link>
-      </div>
-      <div className="main-content">
-        <h2>Transaction List</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Amount</th>
-              <th>Type</th>
-              <th>Date</th>
-              <th>Description</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactions.map((transaction) => (
-              <tr key={transaction.id}>
-                <td>{transaction.amount}</td>
-                <td>{transaction.transactionType.description}</td>
-                <td>{formatDate(transaction.date)}</td>
-                <td>{transaction.description}</td>
-                <td>
-                  <Link
-                    to={`/update-transaction/${transaction.id}`}
-                    className="update-button"
-                  >
-                    Update
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(transaction.id)}
-                    className="delete-button"
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="transaction-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {transactions.map((transaction) => (
+                <tr key={transaction.id}>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.transactionType.description}</td>
+                  <td>{formatDate(transaction.date)}</td>
+                  <td>{transaction.description}</td>
+                  <td>
+                    <Link
+                      to={`/update-transaction/${transaction.id}`}
+                      className="update-button"
+                    >
+                      Update
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(transaction.id)}
+                      className="delete-button"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

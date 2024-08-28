@@ -73,10 +73,8 @@ const DashboardComponent = () => {
 
   return (
     <div className="dashboard-container container">
-      {/* <SidebarComponent userData={userData} /> */}
-
       <div className="main-content row justify-content-around">
-        <div className="transactions card col-5">
+        <div className="transactions card col-4">
           <h2>Recent Transactions</h2>
           <ul>
             {transactions
@@ -85,7 +83,6 @@ const DashboardComponent = () => {
               .map((transaction) => (
                 <li key={transaction.id}>
                   <span>{formatDate(transaction.date)}</span>
-                  {/* <span>{transaction.description}</span> */}
                   <span>${transaction.amount.toLocaleString()}</span>
                 </li>
               ))}
@@ -96,7 +93,7 @@ const DashboardComponent = () => {
             </Link>
           </div>
         </div>
-        <div className="analytics card col-6">
+        <div className="analytics card col-7">
           <h2>Analytics</h2>
           <Analytics
             analyticsData={analyticsData}

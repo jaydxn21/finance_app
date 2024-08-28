@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import DashboardComponent from "./components/dashboard";
 import "../src/components/style/navbar.css";
 import UpdateTransaction from "./components/Transaction/UpdateTransaction";
+import AboutUs from "./components/AboutUs";
 import Test from "./Test";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -29,7 +30,7 @@ const App = () => {
             path="/update-transaction/:id"
             element={<UpdateTransaction />}
           />
-
+          <Route path="/about-us" component={<AboutUs />} />
           <Route path="/dashboard" element={<DashboardComponent />} />
         </Routes>
       </div>

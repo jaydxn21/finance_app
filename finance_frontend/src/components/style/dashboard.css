@@ -6,17 +6,23 @@ body {
 }
 
 .dashboard-container {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column layout by default */
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  transition: grid-template-columns 0.3s ease; /* Smooth transition */
+  width: 90%;
+  max-width: 1200px; /* Limit the maximum width */
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a modern look */
+  margin: auto;
 }
 
 .main-content {
-  /* margin-left: auto;
-  margin-right: auto;
-  max-width: 800px; Center the content when the sidebar is closed */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
   transition: margin-left 0.3s ease; /* Smooth transition */
 }
 
@@ -26,8 +32,16 @@ body {
   border-radius: 20px;
   padding: 20px;
   width: fit-content;
+  max-width: 48%;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for modern look */
+}
+
+.analytics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* Add horizontal scroll if necessary */
 }
 
 .transactions ul {
