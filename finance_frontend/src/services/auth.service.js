@@ -17,7 +17,6 @@ const login = async (email, password) => {
     password,
   });
   if (response.data.token) {
-    // console.log("Token", response.data);
     localStorage.setItem("user", JSON.stringify(response.data.user));
     localStorage.setItem("token", response.data.token);
   }
@@ -26,6 +25,7 @@ const login = async (email, password) => {
 
 const logout = () => {
   localStorage.removeItem("user");
+  localStorage.removeItem("token");
 };
 
 const getCurrentUser = () => {

@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import "../components/style/navbar.css";
 import AuthService from "../services/auth.service";
 
 const NavbarComponent = () => {
   const userData = AuthService.getCurrentUser();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    AuthService.logout();
+    navigate("/login");
+  };
 
   return (
     <>
@@ -24,9 +30,6 @@ const NavbarComponent = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Navbar sticky="top" />
             <Nav className="me-auto">
-              {/* <Nav.Link as={Link} to="/add-transaction">
-                Add Transaction
-              </Nav.Link> */}
               <Nav.Link as={Link} to="/transactions">
                 Transaction List
               </Nav.Link>
@@ -59,10 +62,20 @@ const NavbarComponent = () => {
                   id="basic-nav-dropdown"
                   align="end"
                 >
-                  <NavDropdown.Item as={Link} to="/settings">
-                    Settings
+                  <NavDropdown.Item as={Link} to="/profile">
+                    Profile
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/login">
+                  <NavDropdown.Item as={Link} to="/change-password">
+                    Change Password
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/notification-settings">
+                    Notification Settings
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/privacy-settings">
+                    Privacy Settings
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={handleLogout}>
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>

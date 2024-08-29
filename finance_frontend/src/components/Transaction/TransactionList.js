@@ -53,7 +53,7 @@ const TransactionList = () => {
 
   return (
     <div className="transaction-list-container">
-      <div className="main-content">
+      <div className="list-main-content">
         <h2>Transaction List</h2>
         <Link to="/add-transaction" className="add-transaction-button">
           Add Transaction

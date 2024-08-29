@@ -30,7 +30,7 @@ const App = () => {
             path="/update-transaction/:id"
             element={<UpdateTransaction />}
           />
-          <Route path="/about-us" component={<AboutUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/dashboard" element={<DashboardComponent />} />
         </Routes>
       </div>
