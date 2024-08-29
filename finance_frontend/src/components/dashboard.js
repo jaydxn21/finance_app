@@ -63,8 +63,12 @@ const DashboardComponent = () => {
     fetchAnalyticsData();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
+  if (loading || chartLoading) {
+    return (
+      <div className="spinner-container">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   if (error) {
