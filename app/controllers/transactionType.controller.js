@@ -1,7 +1,6 @@
 const db = require("../models");
 const TransactionType = db.transactionType;
 
-// Retrieve all Transaction Type
 exports.findAll = async (req, res) => {
   try {
     const transactionType = await TransactionType.findAll({});

@@ -3,15 +3,12 @@ const User = db.user;
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Register new user
 exports.register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create user
     const user = await User.create({
       username,
       email,
@@ -25,24 +22,20 @@ exports.register = async (req, res) => {
   }
 };
 
-// Login user
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user
     const user = await User.findOne({ where: { email } });
     if (!user) {
       return res.status(404).json({ message: "User not found!" });
     }
 
-    // Check password
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
       return res.status(401).json({ message: "Invalid password!" });
     }
 
-    // Create JWT token
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
@@ -62,7 +55,6 @@ exports.get = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user
     const user = await User.findAll();
     if (!user) {
       return res.status(404).json({ message: "User not found!" });

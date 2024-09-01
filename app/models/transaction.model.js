@@ -9,8 +9,8 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
 
       references: {
-        model: "transactionTypes", // Name of the table
-        key: "transactionTypeId", // Key in Users table that the userId column will refer to
+        model: "transactionTypes",
+        key: "transactionTypeId",
       },
       onUpdate: "CASCADE",
       onDelete: "CASCADE",
@@ -26,8 +26,8 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: "users", // Name of the table
-        key: "id", // Key in Users table that the userId column will refer to
+        model: "users",
+        key: "id",
       },
       onUpdate: "CASCADE",
       onDelete: "CASCADE",

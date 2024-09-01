@@ -12,20 +12,20 @@
 
 .navbar-custom .username {
   margin-right: 5px;
-  color: #fff; /* Ensures the username text is white */
+  color: #fff;
   display: inline-block;
   vertical-align: middle;
 }
 
 .navbar-custom .dropdown-toggle::after {
-  display: none; /* Hides the dropdown arrow */
+  display: none;
 }
 
 .navbar-custom {
-  background-color: #3498db; /* Blue background */
-  color: white; /* White text */
+  background-color: #3498db;
+  color: white;
   position: sticky;
-  top: 0; /* Stick to the top */
-  z-index: 1000; /* Ensure it's above other elements */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

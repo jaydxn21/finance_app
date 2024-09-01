@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import "../style/transaction/add.css";
 import { useNavigate } from "react-router-dom";
 
-// import TransactionTypeService from "../../services/transactionType.service";
-
 const AddTransaction = () => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");

@@ -17,8 +17,8 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "transactionCodes", // Name of the table
-          key: "transactionCodeId", // Key in Users table that the userId column will refer to
+          model: "transactionCodes",
+          key: "transactionCodeId",
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE",

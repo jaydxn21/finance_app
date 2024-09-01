@@ -1,4 +1,3 @@
-// src/Analytics.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
@@ -7,10 +6,6 @@ import "./style/analytics.css";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#A28CF0"];
 
 const Analytics = (props) => {
-  // const [analyticsData, setAnalyticsData] = useState(null);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
-
   if (props.chartLoading) {
     return <div>Loading...</div>;
   }

@@ -42,7 +42,7 @@ db.connectDB = async () => {
     console.log("PostgreSQL connected successfully");
   } catch (error) {
     console.error("Error connecting to PostgreSQL:", error);
-    process.exit(1); // Exit process with failure
+    process.exit(1);
   }
 };
 

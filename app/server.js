@@ -19,17 +19,12 @@ const transactionRoutes = require("./routes/transaction.routes");
 const transactionTypeRoutes = require("./routes/transactionType.routes");
 const analyticsRoutes = require("./routes/analytics.routes");
 
-// db.sequelize.sync();
-
 app.use(cors(corsOptions));
 
-// parse requests of content-type - application/json
 app.use(bodyParser.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// simple route
 app.get("/", (req, res) => {
   res.json({ message: "Atomic Production - Whwere dreams ignite!" });
 });
@@ -39,28 +34,10 @@ app.use("/api/transaction", transactionRoutes);
 app.use("/api/transactionType", transactionTypeRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
-// app.get("/api/analytics", analyticsRoutes);
-// app.get("/api/analytics", (req, res) => {
-//   const analyticsData = {
-//     totalSpent: 76550.9,
-//     totalIncome: 5250.44,
-//     totalExpenses: 3120.75,
-//     categories: [
-//       { category: "Groceries", amount: 2500 },
-//       { category: "Bills", amount: 1500 },
-//       { category: "Transportation", amount: 500 },
-//       { category: "Income", amount: 1000 },
-//       { category: "Deposit", amount: 750 },
-//     ],
-//   };
-//   res.json(analyticsData);
-// });
-
 app.get("/api/protected", authMiddleware, (req, res) => {
   res.json({ message: "This is a protected route!!" });
 });
 
-// Test connection route
 app.get("/test-connection", async (req, res) => {
   try {
     await db.sequelize.authenticate();
@@ -75,17 +52,15 @@ app.get("/test-connection", async (req, res) => {
   }
 });
 
-// Connect to the database and start the server
 db.sequelize
   .authenticate()
   .then(() => {
     console.log("PostgreSQL connected successfully.");
-    // Sync database
-    // db.sequelize.sync();
+
     db.sequelize.sync().then(() => {
       console.log("Drop and re-sync db.");
     });
-    // Set port, listen for requests
+
     const PORT = process.env.PORT || 8080;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}.`);
@@ -94,9 +69,3 @@ db.sequelize
   .catch((err) => {
     console.error("Error connecting to the database:", err);
   });
-
-// set port, listen for requests
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}.`);
-// });

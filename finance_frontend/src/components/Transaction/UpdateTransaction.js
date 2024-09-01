@@ -4,7 +4,6 @@ import TransactionTypeService from "../../services/transactionType.service";
 import { useParams } from "react-router-dom";
 import "../style/transaction/update.css";
 import { useNavigate } from "react-router-dom";
-// import TransactionTypeService from "../../services/transactionType.service";
 
 const UpdateTransaction = () => {
   const [amount, setAmount] = useState("");
