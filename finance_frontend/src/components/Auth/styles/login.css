@@ -1,6 +1,6 @@
 .login-body {
   font-family: Arial, sans-serif;
-  background-color: #e9eff1; /* Light blue background */
+  background-color: #e9eff1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +10,13 @@
 
 .authcontainer {
   display: flex;
-  background-color: #fff; /* White background for the container */
+  background-color: #fff;
   width: 1000px;
   height: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  border: 2px solid #007bff; /* Blue border */
+  border: 2px solid #007bff;
 }
 
 .left-panel {
@@ -25,14 +25,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #007bff; /* Blue background */
-  color: #fff; /* White text color */
+  background-color: #007bff;
+  color: #fff;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #ffffff; /* White logo text */
+  color: #ffffff;
 }
 
 .login-form,
@@ -45,20 +45,20 @@
 .register-form h2 {
   margin-bottom: 10px;
   font-weight: normal;
-  color: #fff; /* White heading text */
+  color: #fff;
 }
 
 .forgot-password,
 .log-in,
 .sign-up {
   margin-bottom: 20px;
-  color: #d0d0d0; /* Light gray text color */
+  color: #d0d0d0;
   text-decoration: none;
   font-size: 14px;
 }
 
 .forgot-password {
-  color: #d0d0d0; /* Light gray for 'Forgot your password?' link */
+  color: #d0d0d0;
 }
 
 .login-form form,
@@ -74,20 +74,20 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: #f8f9fa; /* Light gray background for inputs */
-  color: #333; /* Dark text color for inputs */
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 .login-form input::placeholder,
 .register-form input::placeholder {
-  color: #888; /* Placeholder text color */
+  color: #888;
 }
 
 .login-form button,
 .register-form button {
   padding: 10px;
-  background-color: #007bff; /* Blue button background */
-  color: #fff; /* White button text */
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -96,13 +96,13 @@
 
 .login-form button:hover,
 .register-form button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 .right-panel {
   width: 60%;
-  background-color: #f1f1f1; /* Light gray background */
-  color: #333; /* Dark text color */
+  background-color: #f1f1f1;
+  color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +118,7 @@
 
 .right-panel p {
   font-size: 18px;
-  color: #007bff; /* Blue text color */
+  color: #007bff;
 }
 .registerLink {
   color: #0b34d7;

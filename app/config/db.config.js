@@ -1,4 +1,3 @@
-// config/db.config.js
 module.exports = {
   HOST: process.env.PGHOST,
   USER: process.env.PGUSER,

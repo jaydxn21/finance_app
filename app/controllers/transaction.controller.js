@@ -3,7 +3,6 @@ const Transaction = db.transactions;
 const TransactionType = db.transactionType;
 const TransactionCode = db.transactionCode;
 
-// Create and Save a new Transaction
 exports.create = async (req, res) => {
   try {
     const { amount, typeId, date, description, userId } = req.body;
@@ -22,7 +21,6 @@ exports.create = async (req, res) => {
   }
 };
 
-// Retrieve all Transactions for a User
 exports.findAll = async (req, res) => {
   try {
     const transactions = await Transaction.findAll({
@@ -49,7 +47,6 @@ exports.findAll = async (req, res) => {
   }
 };
 
-// Retrieve a single Transaction with id
 exports.findOne = async (req, res) => {
   try {
     const transaction = await Transaction.findByPk(req.params.id);
@@ -64,7 +61,6 @@ exports.findOne = async (req, res) => {
   }
 };
 
-// Update a Transaction by the id in the request
 exports.update = async (req, res) => {
   try {
     const [updated] = await Transaction.update(req.body, {
@@ -82,7 +78,6 @@ exports.update = async (req, res) => {
   }
 };
 
-// Delete a Transaction with the specified id in the request
 exports.delete = async (req, res) => {
   try {
     const deleted = await Transaction.destroy({ where: { id: req.params.id } });

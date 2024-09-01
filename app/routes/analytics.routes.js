@@ -5,6 +5,10 @@ const authMiddleware = require("../middleware/auth.middleware");
 // var router = require("express").Router();
 var router = require("express").Router();
 
-router.get("/", authMiddleware, analyticsController.getAnalyticsData);
+router.get(
+  "/user/:userId",
+  authMiddleware,
+  analyticsController.getAnalyticsData
+);
 
 module.exports = router;

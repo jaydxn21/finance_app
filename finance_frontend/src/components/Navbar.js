@@ -31,7 +31,7 @@ const NavbarComponent = () => {
             <Navbar sticky="top" />
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/transactions">
-                Transaction List
+                Transactions
               </Nav.Link>
               <Nav.Link as={Link} to="/about-us">
                 About Us
@@ -62,19 +62,10 @@ const NavbarComponent = () => {
                   id="basic-nav-dropdown"
                   align="end"
                 >
-                  <NavDropdown.Item as={Link} to="/profile">
+                  {/* <NavDropdown.Item as={Link} to="/profile">
                     Profile
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/change-password">
-                    Change Password
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/notification-settings">
-                    Notification Settings
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/privacy-settings">
-                    Privacy Settings
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
+                  </NavDropdown.Item> */}
+                  {/* <NavDropdown.Divider /> */}
                   <NavDropdown.Item onClick={handleLogout}>
                     Logout
                   </NavDropdown.Item>

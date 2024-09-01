@@ -23,14 +23,7 @@ const TransactionList = () => {
       const userId = localStorage.getItem("userId");
 
       try {
-        const response = await axios.get(
-          "http://localhost:8080/api/transaction/user/1",
-          {
-            headers: { "x-access-token": token },
-          }
-        );
-
-        console.log("API response:", response);
+        const response = TransactionService.getAll();
         setTransactions(response.data);
       } catch (error) {
         console.error("Error fetching transactions:", error);
@@ -54,7 +47,7 @@ const TransactionList = () => {
   return (
     <div className="transaction-list-container">
       <div className="list-main-content">
-        <h2>Transaction List</h2>
+        <h2>Transactions</h2>
         <Link to="/add-transaction" className="add-transaction-button">
           Add Transaction
         </Link>
@@ -70,7 +63,7 @@ const TransactionList = () => {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((transaction) => (
+              {transactions?.map((transaction) => (
                 <tr key={transaction.id}>
                   <td>{transaction.amount}</td>
                   <td>{transaction.transactionType.description}</td>

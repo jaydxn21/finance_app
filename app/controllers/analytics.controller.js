@@ -1,5 +1,3 @@
-// const Transaction = require("../models/transaction.model.js"); // Adjust the path according to your project structure
-// const TransactionType = require("../models/transactionType.model.js");
 const { all } = require("axios");
 const db = require("../models");
 const Transaction = db.transactions;
@@ -9,7 +7,8 @@ const TransactionCode = db.transactionCode;
 exports.getAnalyticsData = async (req, res) => {
   try {
     const transactions = await Transaction.findAll({
-      //add where statement to analytics to specify which info to pull
+      where: { userId: req.params.userId },
+
       include: [
         {
           model: TransactionType,
@@ -24,7 +23,6 @@ exports.getAnalyticsData = async (req, res) => {
       ],
     });
 
-    // Calculate total spent, total income, total expenses
     const totalIncome = transactions.reduce((acc, transaction) => {
       if (
         transaction.transactionType.transactionCode.code.toLowerCase() ===
@@ -44,7 +42,7 @@ exports.getAnalyticsData = async (req, res) => {
       }
       return acc;
     }, 0);
-    // Calculate amounts per category
+
     const types = transactions.reduce((acc, transaction) => {
       const type = transaction.transactionType.description || "Others";
       if (!acc[type]) {

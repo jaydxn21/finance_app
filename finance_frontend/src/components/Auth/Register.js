@@ -26,7 +26,7 @@ const Register = () => {
       const response = await AuthService.register(username, email, password);
       console.log("Registration response:", response);
       alert("Registration successful");
-      navigate("/add-expense");
+      navigate("/login");
     } catch (error) {
       console.error("Error during registration:", error);
       if (error.response) {
@@ -52,7 +52,7 @@ const Register = () => {
             <p>
               Already have an account?{" "}
               <Link to="/login" className="log-in">
-                Log in here
+                Log In
               </Link>
             </p>
             <form onSubmit={handleRegister}>

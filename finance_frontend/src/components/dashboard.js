@@ -42,9 +42,10 @@ const DashboardComponent = () => {
     };
     const fetchAnalyticsData = async () => {
       try {
+        const user = AuthService.getCurrentUser();
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:8080/api/analytics",
+          `http://localhost:8080/api/analytics/user/${user.id}`,
           {
             headers: { "x-access-token": token },
           }
@@ -91,11 +92,16 @@ const DashboardComponent = () => {
                 </li>
               ))}
           </ul>
-          <div className="see-more-container">
-            <Link to="/transactions" className="see-more-link">
-              See All
-            </Link>
-          </div>
+
+          {transactions.length > 0 ? (
+            <div className="see-more-container">
+              <Link to="/transactions" className="see-more-link">
+                See All
+              </Link>
+            </div>
+          ) : (
+            <div>No Recent Transactions</div>
+          )}
         </div>
         <div className="analytics card col-7">
           <h2>Analytics</h2>
