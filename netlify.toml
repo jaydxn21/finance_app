@@ -1,8 +1,0 @@
-[build]
-  base    = "finance_frontend"
-  publish = "finance_frontend/build"
-  command = "npm run build"
-
-[build.environment]
-  CI = "true"
-  NODE_VERSION = "16"
