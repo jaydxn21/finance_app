@@ -42,6 +42,7 @@ const UpdateTransaction = () => {
 
   const handleUpdateTransaction = async (e) => {
     e.preventDefault();
+
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const userId = user.id;

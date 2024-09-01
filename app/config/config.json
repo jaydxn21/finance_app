@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "jaydxn21",
-    "database": "testdb",
-    "host": "127.0.0.1",
+    "username": "fnce_user",
+    "password": "LfbYi40XHBsGm4fJiXqwB3JtzDjz9eo0",
+    "database": "fnce",
+    "host": "dpg-cra9s3ij1k6c73btkhhg-a",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": "jaydxn21",
-    "database": "testdb",
-    "host": "127.0.0.1",
+    "username": "fnce_user",
+    "password": "LfbYi40XHBsGm4fJiXqwB3JtzDjz9eo0",
+    "database": "fnce",
+    "host": "dpg-cra9s3ij1k6c73btkhhg-a",
     "dialect": "postgres"
   },
   "production": {
