@@ -40,7 +40,7 @@ const DashboardComponent = () => {
         const user = AuthService.getCurrentUser();
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:8080/api/analytics/user/${user.id}`,
+          `https://finance-app-yuvz.onrender.com/api/analytics/user/${user.id}`,
           {
             headers: { "x-access-token": token },
           }

@@ -9,9 +9,12 @@ const ExpenseList = () => {
       const token = localStorage.getItem("token");
 
       try {
-        const response = await axios.get("http://localhost:8080/api/expense", {
-          headers: { "x-access-token": token },
-        });
+        const response = await axios.get(
+          "https://finance-app-yuvz.onrender.com/api/expense",
+          {
+            headers: { "x-access-token": token },
+          }
+        );
 
         setExpenses(response.data);
       } catch (error) {
