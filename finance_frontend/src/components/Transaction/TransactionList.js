@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/transactionList.css";
 import TransactionService from "../../services/transaction.service";
@@ -18,12 +17,8 @@ const TransactionList = () => {
 
   useEffect(() => {
     const fetchTransactions = async () => {
-      const token = localStorage.getItem("token");
-      console.log("Token:", token);
-      const userId = localStorage.getItem("userId");
-
       try {
-        const response = TransactionService.getAll();
+        const response = await TransactionService.getAll();
         setTransactions(response.data);
       } catch (error) {
         console.error("Error fetching transactions:", error);
@@ -34,8 +29,6 @@ const TransactionList = () => {
   }, []);
 
   const handleDelete = async (transactionId) => {
-    const token = localStorage.getItem("token");
-
     try {
       TransactionService.deleteTransaction(transactionId);
       setTransactions(transactions.filter((t) => t.id !== transactionId));

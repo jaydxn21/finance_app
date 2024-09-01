@@ -17,14 +17,9 @@ const Register = () => {
       alert("Please fill in all fields.");
       return;
     }
-    console.log("handleRegister called");
-    console.log("Username:", username);
-    console.log("Email:", email);
-    console.log("Password:", password);
 
     try {
-      const response = await AuthService.register(username, email, password);
-      console.log("Registration response:", response);
+      await AuthService.register(username, email, password);
       alert("Registration successful");
       navigate("/login");
     } catch (error) {

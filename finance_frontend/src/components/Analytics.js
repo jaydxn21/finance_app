@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import "./style/analytics.css";
 

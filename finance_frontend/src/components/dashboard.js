@@ -7,11 +7,9 @@ import AuthService from "../services/auth.service";
 import Analytics from "./Analytics";
 
 const DashboardComponent = () => {
-  const [userData, setUserData] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [chartLoading, setChartLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [chartError, setChartError] = useState(null);
   const [analyticsData, setAnalyticsData] = useState(null);
 
@@ -30,13 +28,10 @@ const DashboardComponent = () => {
       try {
         const response = await TransactionService.getAll();
 
-        console.log("API response:", response);
         setTransactions(response.data);
-        const user = AuthService.getCurrentUser();
-        setUserData(user);
         setLoading(false);
-      } catch (error) {
-        console.error("Error fetching transactions:", error);
+      } catch (err) {
+        console.error("Error fetching transactions:", err);
         setLoading(false);
       }
     };
@@ -50,7 +45,6 @@ const DashboardComponent = () => {
             headers: { "x-access-token": token },
           }
         );
-        console.log("Trans", response.data);
         setAnalyticsData(response.data);
       } catch (err) {
         setChartError("Error fetching analytics data");
@@ -70,10 +64,6 @@ const DashboardComponent = () => {
         <div className="spinner"></div>
       </div>
     );
-  }
-
-  if (error) {
-    return <div>{error}</div>;
   }
 
   return (
@@ -100,7 +90,7 @@ const DashboardComponent = () => {
               </Link>
             </div>
           ) : (
-            <div>No Recent Transactions</div>
+            <div style={{ textAlign: "center" }}>No Recent Transactions</div>
           )}
         </div>
         <div className="analytics card col-7">

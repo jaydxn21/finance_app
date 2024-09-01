@@ -26,8 +26,6 @@ const UpdateTransaction = () => {
   }, []);
 
   useEffect(() => {
-    console.log("", transactionTypes);
-
     if (id !== null && transactionTypes.length > 0) {
       TransactionService.get(id)
         .then((response) => {
@@ -47,7 +45,6 @@ const UpdateTransaction = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const userId = user.id;
-      console.log(type);
       await TransactionService.updateTransaction(id, {
         amount,
         typeId: type,

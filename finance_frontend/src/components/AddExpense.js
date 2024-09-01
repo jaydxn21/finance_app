@@ -18,7 +18,6 @@ const AddExpense = () => {
         { headers: { "x-access-token": token } }
       );
 
-      console.log("Expense added:", response.data);
       setAmount("");
       setDescription("");
       setDate("");
