@@ -13,15 +13,55 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
+  width: 100%; /* Make the content responsive */
   text-align: center;
 }
 
 .about-us-content h1 {
   color: #007bff;
   margin-bottom: 20px;
+  font-size: 2rem; /* Adjust font size for responsiveness */
 }
 
 .about-us-content p {
   color: #34495e;
   line-height: 1.6;
+  font-size: 1rem; /* Ensure text is readable on smaller screens */
+}
+
+/* Media queries for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .about-us-content {
+    padding: 20px; /* Reduce padding inside the content box */
+  }
+
+  .about-us-content h1 {
+    font-size: 1.75rem; /* Decrease font size for mobile */
+  }
+
+  .about-us-content p {
+    font-size: 0.95rem; /* Slightly reduce paragraph font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-container {
+    padding: 20px 10px; /* Further reduce padding for very small screens */
+  }
+
+  .about-us-content {
+    padding: 15px; /* Minimize padding inside the content box */
+  }
+
+  .about-us-content h1 {
+    font-size: 1.5rem; /* Further decrease heading font size */
+  }
+
+  .about-us-content p {
+    font-size: 0.9rem; /* Reduce paragraph font size for better readability */
+  }
 }
