@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "fnce_user",
-    "password": "LfbYi40XHBsGm4fJiXqwB3JtzDjz9eo0",
+    "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnce",
     "host": "dpg-cra9s3ij1k6c73btkhhg-a",
     "dialect": "postgres"
   },
   "test": {
     "username": "fnce_user",
-    "password": "LfbYi40XHBsGm4fJiXqwB3JtzDjz9eo0",
+    "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnce",
     "host": "dpg-cra9s3ij1k6c73btkhhg-a",
     "dialect": "postgres"
   },
   "production": {
     "username": "fnce_user",
-    "password": "LfbYi40XHBsGm4fJiXqwB3JtzDjz9eo0",
+    "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnce",
     "host": "dpg-cra9s3ij1k6c73btkhhg-a",
     "dialect": "postgres"
