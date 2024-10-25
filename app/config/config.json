@@ -18,6 +18,7 @@
     "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnce",
     "host": "dpg-cra9s3ij1k6c73btkhhg-a",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "postgres"
   }
 }
