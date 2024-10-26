@@ -3,11 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const dotenv = require("dotenv");
 
 const app = express();
 
-var corsOptions = {
+const corsOptions = {
   origin: "https://fnce.onrender.com",
 };
 
@@ -20,13 +19,11 @@ const transactionTypeRoutes = require("./routes/transactionType.routes");
 const analyticsRoutes = require("./routes/analytics.routes");
 
 app.use(cors(corsOptions));
-
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Atomic Production - Whwere dreams ignite!" });
+  res.json({ message: "Atomic Production - Where dreams ignite!" });
 });
 
 app.use("/api/auth", authRoutes);
@@ -52,19 +49,26 @@ app.get("/test-connection", async (req, res) => {
   }
 });
 
+// Start listening on the port immediately
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+// Authenticate and sync database in the background
 db.sequelize
   .authenticate()
   .then(() => {
     console.log("PostgreSQL connected successfully.");
 
-    db.sequelize.sync().then(() => {
-      console.log("Drop and re-sync db.");
-    });
+    // Conditionally sync database based on environment
+    if (process.env.NODE_ENV !== "production") {
+      db.sequelize.sync({ force: true }).then(() => {
+        console.log("Drop and re-sync db in development.");
+      });
+    } else {
+      db.sequelize.sync(); // Sync without dropping tables in production
+    }
   })
   .catch((err) => {
     console.error("Error connecting to the database:", err);
