@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "NODE_ENV=production npm install && NODE_ENV=production npx sequelize-cli db:migrate && NODE_ENV=production npx sequelize-cli db:seed:all && npm run start"
+    "migrate": "NODE_ENV=production npx sequelize-cli db:migrate",
+    "seed": "NODE_ENV=production npx sequelize-cli db:seed:all",
+    "build": "npm install && npm run migrate && npm run seed && npm run start"
   },
   "author": "Rowan",
   "license": "ISC",
