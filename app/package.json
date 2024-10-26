@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pm2 start server.js",
     "build": "npm install",
-    "migrate": "NODE_ENV=production npx sequelize-cli db:migrate"
+    "migrate": "NODE_ENV=production npx sequelize-cli db:migrate",
+    "watch": "pm2 log 0"
   },
   "author": "Rowan",
   "license": "ISC",
