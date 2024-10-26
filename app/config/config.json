@@ -24,6 +24,12 @@
     "host": "dpg-csdp31tsvqrc7392qm90-a.oregon-postgres.render.com",
     "use_env_variable": "DATABASE_URL",
     "port": 5432,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
