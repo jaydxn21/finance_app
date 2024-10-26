@@ -7,7 +7,8 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "https://fnce.onrender.com",
+  // origin: "https://fnce.onrender.com",
+  origin: "http://localhost:3000",
 };
 
 const authMiddleware = require("./middleware/auth.middleware");
@@ -50,7 +51,7 @@ app.get("/test-connection", async (req, res) => {
 });
 
 // Start listening on the port immediately
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
