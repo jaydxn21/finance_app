@@ -7,8 +7,8 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  // origin: "https://fnce.onrender.com",
-  origin: "http://localhost:3000",
+  origin: "https://fnce.onrender.com",
+  // origin: "http://localhost:3000",
 };
 
 const authMiddleware = require("./middleware/auth.middleware");
