@@ -10,7 +10,7 @@ const ExpenseList = () => {
 
       try {
         const response = await axios.get(
-          "https://finance-app-yuvz.onrender.com/api/expense",
+          "https://finance-app-l79m.onrender.com/api/expense",
           {
             headers: { "x-access-token": token },
           }

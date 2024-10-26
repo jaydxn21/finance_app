@@ -1,7 +1,7 @@
 import axios from "axios";
 import AuthService from "./auth.service";
 
-const API_URL = "https://finance-app-yuvz.onrender.com/api/transaction/";
+const API_URL = "https://finance-app-l79m.onrender.com/api/transaction/";
 
 const create = async (transaction) => {
   const token = localStorage.getItem("token");

@@ -13,7 +13,7 @@ const AddExpense = () => {
 
     try {
       const response = await axios.post(
-        "https://finance-app-yuvz.onrender.com/api/expense",
+        "https://finance-app-l79m.onrender.com/api/expense",
         { amount, description, date },
         { headers: { "x-access-token": token } }
       );
