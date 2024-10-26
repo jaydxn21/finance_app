@@ -4,6 +4,7 @@
     "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnceapp",
     "host": "dpg-csdp31tsvqrc7392qm90-a.oregon-postgres.render.com",
+    "use_env_variable": "DATABASE_URL",
     "port": 5432,
     "dialect": "postgres"
   },
@@ -12,6 +13,7 @@
     "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnceapp",
     "host": "dpg-csdp31tsvqrc7392qm90-a.oregon-postgres.render.com",
+    "use_env_variable": "DATABASE_URL",
     "port": 5432,
     "dialect": "postgres"
   },
@@ -20,6 +22,7 @@
     "password": "8vwLh8DpBdOyQJ77GFBK4Oxt4aBfPosL",
     "database": "fnceapp",
     "host": "dpg-csdp31tsvqrc7392qm90-a.oregon-postgres.render.com",
+    "use_env_variable": "DATABASE_URL",
     "port": 5432,
     "dialect": "postgres"
   }
